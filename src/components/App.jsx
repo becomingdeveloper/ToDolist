@@ -17,9 +17,9 @@ function App() {
 
   function handleClick() {
     setItems(prevValue => {
-      return [...prevValue, items];
+      return [...prevValue, itemText];
     });
-    //setText("");
+    setText("");
   }
 
   return (
@@ -28,16 +28,16 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input type="text" value={itemText} onChange={handlechange} />
+        <input onChange={handlechange} type="text" value={itemText} />
         <button onClick={handleClick}>
           <span>Add</span>
         </button>
       </div>
       <div>
         <ul>
-          {items.map(item => {
-            return <li>{itemText}</li>;
-          })}
+          {items.map(todoItem => (
+            <li>{todoItem}</li>
+          ))}
         </ul>
       </div>
     </div>
